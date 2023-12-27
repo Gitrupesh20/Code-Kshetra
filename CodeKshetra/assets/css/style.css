@@ -1312,7 +1312,7 @@ h6 {
   margin-bottom: 0;
 }
 
-.stay-tuned-button {
+.custom-btn {
   display: inline-block;
   padding: 15px 40px;
   background: linear-gradient(45deg, #3498db, #8e44ad);
@@ -1323,8 +1323,14 @@ h6 {
   transition: background 0.3s ease-in-out;
 }
 
-.stay-tuned-button:hover {
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.custom-btn:hover {
   background: linear-gradient(45deg, #2980b9, #9b59b6);
+  color: white;
 }
 
 /*--------------------------------------------------------------
