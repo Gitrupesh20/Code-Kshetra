@@ -1,12 +1,13 @@
 /**
 * Template Name: Code Kshetra
-* Updated: Dec 19 2023 with Bootstrap v5.3.2
+* Updated: 07/01/2024 with Bootstrap v5.3.2
 */
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -67,28 +68,28 @@ h6 {
   height: 100%;
   background-color: #ffffff00;
   display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 8px solid #0e1b4d;
+  border-top: 8px solid #A90377;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .loader {
-    border: 8px solid #0e1b4d;
-    border-top: 8px solid #A90377;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+
+  100% {
+    transform: rotate(360deg);
   }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
 }
 
 /*--------------------------------------------------------------
@@ -203,11 +204,18 @@ h6 {
 }
 
 #header #logo img {
-  filter: grayscale(100%) invert(100%) brightness(100%);
   padding: 0;
   margin: 0;
   max-height: 50px !important;
   transition: opacity 0.5s ease;
+}
+
+#header #header-logo-img1 {
+  filter: grayscale(100%) invert(100%) brightness(100%);
+}
+
+#header #header-logo-img2 {
+  margin-left: -10px !important;
 }
 
 @media (max-width: 992px) {
@@ -326,7 +334,7 @@ h6 {
 .navbar .dropdown ul {
   display: block;
   position: absolute;
-  left: -76px;
+  left: -120px;
   top: calc(100% + 30px);
   margin: 0;
   padding: 10px 0;
@@ -558,7 +566,6 @@ h6 {
   text-align: center;
   padding: 0 15px;
   z-index: 1;
-  /* Ensure the content is above the blurred background */
 }
 
 @media (max-width: 991px) {
@@ -714,7 +721,7 @@ h6 {
       color: hsl(0 0% 100%);
       display: grid;
       text-align: center;
-      font-size: 4cqi;
+      font-size: 5cqi;
 
       >.number {
         color: var(--number-color);
@@ -750,6 +757,13 @@ h6 {
       }
     }
   }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 60%;
+  }
+
+ 
 }
 
 @keyframes pulsate-btn {
@@ -918,7 +932,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Our Team Section --------------------------------------------------------------*/ #ourTeam {
+# Our Team Section --------------------------------------------------------------*/
+#ourTeam {
   padding: 60px 5px;
 }
 
@@ -933,7 +948,7 @@ h6 {
 }
 
 #ourTeam .btn {
-  background: rgba(6, 12, 34, 0.98);
+  background: #060c22fa;
   color: #fff;
   padding: 15px 30px;
   font-size: 18px;
@@ -944,6 +959,7 @@ h6 {
 #ourTeam .btn:hover {
   background: rgba(6, 12, 34, 0.85);
 }
+
 /* General Styles */
 #ourTeam .box,
 #ourTeam-details .details h2,
@@ -965,12 +981,12 @@ h6 {
   text-align: center;
   background: #ededed;
   border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-  }
-  
-  #ourTeam .box:hover {
-    background: #d9d9d9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+#ourTeam .box:hover {
+  background: #d9d9d9;
 }
 
 #ourTeam .box1 {
@@ -1003,7 +1019,7 @@ h6 {
   border: 5px solid rgba(255, 255, 255, 0);
   border-radius: 2%;
   pointer-events: fill;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Font Styles */
@@ -1027,6 +1043,7 @@ h6 {
   color: gray;
   margin: 10px 30px 20px;
 }
+
 #ourTeam .image .initials {
   display: flex;
   align-items: center;
@@ -1065,33 +1082,34 @@ h6 {
 
 #ourTeam p {
   margin: 0 0 2px;
-  }
-  
-  /* Team Details Styles */
-  #ourTeam-details .details h2 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  
-  #ourTeam-details .details .social {
-    margin-bottom: 15px;
-  }
-  
-  #ourTeam-details .social a:hover {
-    background: #a90377;
-    color: #fff;
-  }
-  
-  #ourTeam-details .social a i {
-    font-size: 16px;
-    line-height: 0;
+}
+
+/* Team Details Styles */
+#ourTeam-details .details h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#ourTeam-details .details .social {
+  margin-bottom: 15px;
+}
+
+#ourTeam-details .social a:hover {
+  background: #a90377;
+  color: #fff;
+}
+
+#ourTeam-details .social a i {
+  font-size: 16px;
+  line-height: 0;
 }
 
 #ourTeam-details .details p {
   font-size: 15px;
   margin-bottom: 10px;
 }
+
 /* Content-1:End */
 /*--------------------------------------------------------------
 # judges Section
@@ -1199,8 +1217,200 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Timeline Schedule 
+--------------------------------------------------------------*/
+.line_box {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.text_circle {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.text_circle:after {
+  background-color: grey;
+  bottom: 1.25em;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  z-index: -1;
+}
+
+.stav_projektu .text_circle:after,
+.stav_projektu .text_circle:before {
+  background-color: grey;
+  z-index: 1;
+}
+
+.line_box h4 {
+  color: #060c22fa;
+  font-weight: bold;
+}
+
+.line_box h4,
+.line_box p {
+  font-size: 12px;
+  margin-bottom: 0;
+  padding: 0 5px;
+}
+
+.subline {
+  position: absolute;
+  right: -25px;
+  bottom: -43%;
+  z-index: 1;
+}
+
+.subline:before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  bottom: 14px;
+  right: 15px;
+  background-color: #060c22fa;
+  border-radius: 50%;
+  top: -25px;
+  z-index: 1;
+}
+
+.subline h6 {
+  margin-bottom: 0;
+}
+
+.timeline {
+  margin: 40px 0;
+}
+
+.text_circle.done:after,
+.text_circle.done+.text_circle:before,
+.stav_projektu .text_circle.done:after,
+.stav_projektu .text_circle.done+.text_circle:before {
+  background-color: #060c22fa;
+}
+
+.text_circle.sub:after {
+  background-color: #060c22fa;
+  z-index: 2;
+}
+
+.text_circle:not(:first-child):before {
+  bottom: 1.25em;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  width: 50%;
+  z-index: 1;
+  background-color: grey;
+}
+
+.stav_projektu .text_circle:not(:first-child):before {
+  background-color: grey;
+}
+
+.text_circle:last-child:after {
+  width: 0;
+}
+
+.circle {
+  height: 100%;
+}
+
+.tvar {
+  height: 40px;
+  width: 40px;
+  border: 2px solid #060c22fa;
+  display: flex;
+  position: relative;
+  border-radius: 100%;
+  top: -43px;
+  margin: 3px auto;
+  background-color: #fff;
+}
+
+.tvar span {
+  margin: 25% auto;
+  height: 20px;
+  width: 20px;
+  background-color: #060c22fa;
+  border-radius: 100%;
+  color: #fff;
+}
+
+.stav_projektu .tvar {
+  border: 2px solid grey;
+  z-index: 2;
+}
+
+.stav_projektu .done .tvar,
+.stav_projektu .sub .tvar {
+  border: 2px solid #060c22fa;
+  z-index: 3;
+}
+
+.subline h6 {
+  color: #060c22fa;
+}
+
+.timeline .card-header:hover {
+  background-color: #ececec;
+
+  cursor: pointer;
+}
+
+/* iPhone X ----------------------------------- */
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+  .subline:before {
+    top: -43px;
+  }
+}
+
+@media only screen and (device-width : 812px) and (device-height : 375px) and (orientation : landscape) and (-webkit-device-pixel-ratio : 3) {
+  .subline:before {
+    top: -31px;
+  }
+}
+
+/* iPad portrait ----------------------------------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  .subline:before {
+    top: -29px;
+  }
+}
+
+/* mobile width till 767px ----------------------------------- */
+@media (max-width: 767px) {
+  .subline:before {
+    top: -30px;
+  }
+}
+
+/* Portrait iPad Pro */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .subline:before {
+    top: -23px;
+  }
+}
+
+/* mobile width till 480px ----------------------------------- */
+@media (max-width: 480px) {
+  .subline:before {
+    top: -43px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Schedule Section
 --------------------------------------------------------------*/
+
 #schedule {
   padding: 60px 0;
 }
@@ -1339,6 +1549,7 @@ a {
 #venue {
   padding: 60px;
 }
+
 #venue .container-fluid {
   margin-bottom: 3px;
 }
@@ -1376,6 +1587,10 @@ a {
 @media (max-width: 574px) {
   #venue .venue-info h3 {
     font-size: 24px;
+  }
+
+  #venue {
+    padding: 60px 0px;
   }
 }
 
@@ -1437,18 +1652,14 @@ a {
 #row {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
 }
 
 #row .prize {
-
   border: 1px solid #e0e5fa;
   border-radius: 1rem;
   background-color: #13032af7;
   margin-bottom: 3rem;
-  width: 50%;
-  margin-left: 2rem;
 }
 
 #row .prize:hover {
@@ -1456,9 +1667,33 @@ a {
 }
 
 #row .prize-img {
-
   overflow: hidden;
   margin-bottom: 15px;
+}
+
+#Prizes .row .col-md-2 {
+  border: 1px solid #e0e5fa;
+  border-radius: 1rem;
+  background-color: #13032af7;
+  padding: 0;
+}
+
+
+#row .awarad-img {
+  overflow: hidden;
+  width: 100%;
+  /* Make the image fill the container */
+  height: auto;
+  /* Maintain the aspect ratio */
+  border-radius: 5px;
+}
+
+#row .awarad:hover {
+  transform: scale(1.1);
+}
+
+#row .awarad {
+  transition: 0.3s ease-in-out;
 
 }
 
@@ -1467,9 +1702,17 @@ a {
 
 }
 
+#row h4 {
+  font-weight: 1000;
+  font-size: small;
+  margin-bottom: 5px;
+  padding: 0 20px;
+  color: white;
+}
+
 #row h3 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 5px;
   padding: 0 20px;
   color: white;
@@ -1498,17 +1741,22 @@ a {
   font-size: 15px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
   #row .prize {
     width: 80%;
     margin-left: 0;
   }
 
+  #row .awarad {
+    width: 50%;
+    margin-left: 0;
+  }
+
   #row {
     flex-direction: column;
   }
-}
+} */
 
 
 /*--------------------------------------------------------------
@@ -2005,7 +2253,7 @@ a {
 }
 
 #footer .footer-top .footer-info img {
-  height: 120px;
+  height: 80px;
   margin-bottom: 20px;
 }
 
